@@ -1,0 +1,99 @@
+{% extends 'FireDetectionApp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Hero Start -->
+    <div class="container-fluid bg-primary p-5 hero-header mb-5">
+        <div class="row py-5">
+            <div class="col-12 text-center">
+                <h1 class="display-1 text-white animated zoomIn">Service</h1>
+                <span style="display: flex;flex-direction: row;justify-content: center;align-items: center;">
+                    <a href="{% url 'FireDetectApp:homepage' %}" class="h4 text-white">Home</a>
+                    <h3 style="color: aliceblue;">/</h3>
+                    <a href="{% url 'FireDetectApp:services' %}" class="h4 text-white">Service</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- Services Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                <h5 class="text-primary text-uppercase" style="letter-spacing: 5px;">Services</h5>
+                <h1 class="display-5 mb-0">Our Excellent Fire Detection Smart Services</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                        <div class="position-relative p-5">
+                            <i class="flaticon-cctv d-block display-1 fw-normal text-secondary mb-3"></i>
+                            <h5 class="text-primary mb-0">CCTV</h5>
+                            <h3 class="mb-3">Installation</h3>
+                            <p>Setting up CCTV cameras with smart recognition features</p>
+                            <a href="">Read More<i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                        <div class="position-relative p-5">
+                            <i class="flaticon-surveillance d-block display-1 fw-normal text-secondary mb-3"></i>
+                            <h5 class="text-primary mb-0">CCTV</h5>
+                            <h3 class="mb-3">Configuration</h3>
+                            <p>Configuration of CCTV's so as to use our algorithms for Fire Detection</p>
+                            <a href="{% url 'FireDetectApp:webcamdetectpage'  %}">Proceed<i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                    <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                        <div class="position-relative p-5">
+                            <i class="flaticon-camera d-block display-1 fw-normal text-secondary mb-3"></i>
+                            <h5 class="text-primary mb-0">CCTV</h5>
+                            <h3 class="mb-3">Maintenance</h3>
+                            <p>To use to most robust and advanced algorithms</p>
+                            <a href="">Read More<i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                        <div class="position-relative p-5">
+                            <i class="flaticon-double d-block display-1 fw-normal text-secondary mb-3"></i>
+                            <h5 class="text-primary mb-0">Video</h5>
+                            <h3 class="mb-3">Fire Detection Analysis</h3>
+                            <p>Service that can be used so as to increase awarness about Fire and it's impact</p>
+                            <a href="">Read More<i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                        <div class="position-relative p-5">
+                            <i class="flaticon-security-system d-block display-1 fw-normal text-secondary mb-3"></i>
+                            <h5 class="text-primary mb-0">Image</h5>
+                            <h3 class="mb-3">Fire Detection Analysis</h3>
+                            <p>Service that can be used so as to increase awarness about Fire and it's impact</p>
+                            <a href="">Read More<i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                    <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                        <div class="position-relative p-5">
+                            <i class="flaticon-recorder d-block display-1 fw-normal text-secondary mb-3"></i>
+                            <h5 class="text-primary mb-0">Alert</h5>
+                            <h3 class="mb-3">Safety and Awarness</h3>
+                            <p>Our robust alert mechanism so as to not miss any instance of fire on your valuable assets</p>
+                            <a href="">Read More<i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+    {% endblock content %}

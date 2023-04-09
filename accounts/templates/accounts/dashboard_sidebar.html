@@ -1,0 +1,14 @@
+<aside class="col-md-3">
+    <!--   SIDEBAR   -->
+    <ul class="list-group">
+        <a class="list-group-item {% if '/dashboard' in request.path %}active{% endif %}" href="#">Dashboard</a>
+        <a class="list-group-item {% if '/myorders/' in request.path %}active{% endif %}" href="#">Emergency Contacts</a>
+        <a class="list-group-item {% if '/editprofile/' in request.path %}active{% endif %}" href="#"> Edit Profile </a>
+        <!-- <a class="list-group-item" href="#"> Return and refunds </a> -->
+        <a class="list-group-item {% if '/changepasscode/' in request.path %}active{% endif %}" href="#">Change Password</a>
+        <!-- <a class="list-group-item" href="#"> My Selling Items </a> -->
+    </ul>
+    <br>
+    <a class="btn btn-light btn-block" href="{% url 'FireDetectApp:homepage_dummy' %}"> <i class="fa fa-power-off"></i> <span class="text">Log out</span> </a> 
+    <!--   SIDEBAR .//END   -->
+</aside>

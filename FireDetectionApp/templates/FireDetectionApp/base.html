@@ -1,0 +1,192 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> FlameScope - A free Fire Detection service</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'FireDetectionApp/img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'FireDetectionApp/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'FireDetectionApp/lib/animate/animate.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'FireDetectionApp/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'FireDetectionApp/css/style.css' %}" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="{% static 'FireDetectionApp/js/jquery-2.0.0.min.js' %}" type="text/javascript"></script>
+
+    <!-- Bootstrap4 files-->
+    <script src="{% static 'FireDetectionApp/js/bootstrap.bundle.min.js' %}" type="text/javascript"></script>
+    <link href="{% static 'FireDetectionApp/css/bootstrap.css' %}" rel="stylesheet" type="text/css"/>
+
+    <!-- Font awesome 5 -->
+    <link href="{% static 'FireDetectionApp/fonts/fontawesome/css/all.min.css' %}" type="text/css" rel="stylesheet">
+
+    <!-- custom style -->
+    <link href="{% static 'FireDetectionApp/css/ui.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'FireDetectionApp/css/responsive.css' %}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+
+    <!-- custom javascript -->
+    <script src="{% static 'FireDetectionApp/js/script.js' %}" type="text/javascript"></script>
+
+    <!-- html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Link to custom CSS for review and rating -->
+    <link rel="stylesheet" href="{% static 'FireDetectionApp/css/ratingreview.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'FireDetectionApp/CSS/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'FireDetectionApp/CSS/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'FireDetectionApp/CSS/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'FireDetectionApp/CSS/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'FireDetectionApp/CSS/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'FireDetectionApp/CSS/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'FireDetectionApp/CSS/style.css' %}">
+
+    <!-- Jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <a href="{% url 'FireDetectApp:homepage' %}" class="navbar-brand ms-lg-5" style="display: flex;flex-direction: row;">
+            <img src="{% static 'FireDetectionApp/img/logo.png' %}" alt="" style="width: 55px;height: 55px;">
+            <h1 class="display-5 m-0 text-primary">Flame<span class="text-secondary">Scope</span></h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                {% if '127.0.0.1:8000/' in request.path %}
+                <a href="{% url 'FireDetectApp:homepage' %}" class="nav-item nav-link active">Home</a>
+                {% else %}
+                <a href="{% url 'FireDetectApp:homepage' %}" class="nav-item nav-link">Home</a>
+                {% endif %}
+                
+                {% if 'services/' in request.path %}
+                <a href="{% url 'FireDetectApp:services' %}" class="nav-item nav-link active">Detection</a>
+                {% else %}
+                <a href="{% url 'FireDetectApp:services' %}" class="nav-item nav-link">Detection</a>
+                {% endif %}
+
+                {% if 'user/' in request.path %}
+                <a href="{% url 'accounts:loginuser' %}" class="nav-item nav-link active">Account</a>
+                {% else %}
+                <a href="{% url 'accounts:loginuser' %}" class="nav-item nav-link">Account</a>
+                {% endif %}
+
+                {% if 'contactus/' in request.path %}
+                <a href="{% url 'FireDetectApp:contactus' %}" class="nav-item nav-link active">Contact</a>
+                {% else %}
+                <a href="{% url 'FireDetectApp:contactus' %}" class="nav-item nav-link">Contact</a>
+                {% endif %}
+                <div style="display: flex;justify-content: center;align-items: center;margin-left: 30px;margin-right: 30px;color: black;font-family: Verdana, Geneva, Tahoma, sans-serif;">       
+                    <div class="widget-header">
+                        <small class="title text-muted">Welcome Devansh</small>
+                        <div>
+                            <a href="{% url 'FireDetectApp:userdashboard' %}">Dashboard</a> <span class="dark-transp"> | </span>
+                            <a href="{% url 'FireDetectApp:useraccount' %}">Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    {% block content %}
+        <!-- Content -->
+    {% endblock content %}
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container pt-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4">Quick Links</h3>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-light mb-2" href="{% url 'FireDetectApp:homepage' %}"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                        <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                        <a class="text-light mb-2" href="{% url 'FireDetectApp:services' %}"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                        <a class="text-light" href="{% url 'FireDetectApp:contactus' %}"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4">Get In Touch</h3>
+                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>KJSIT-Sion Mumbai, India</p>
+                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>gammabytes.sup@gmail.com</p>
+                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>+91 7738500000</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4">Follow Us</h3>
+                    <div class="d-flex">
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <form class="mx-auto" style="max-width: 600px;">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                            <button class="btn btn-primary px-4">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-primary text-light py-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">&copy; <a class="text-white border-bottom" href="#">GammaBytes</a>. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-secondary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'FireDetectionApp/lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'FireDetectionApp/lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'FireDetectionApp/lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'FireDetectionApp/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'FireDetectionApp/js/main.js' %}"></script>
+</body>
+
+</html>

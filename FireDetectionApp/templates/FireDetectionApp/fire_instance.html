@@ -1,0 +1,46 @@
+{% extends 'FireDetectionApp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Hero Start -->
+    <div class="container-fluid bg-primary p-5 hero-header mb-5">
+        <div class="row py-5">
+            <div class="col-12 text-center">
+                <h1 class="display-1 text-white animated zoomIn">Account</h1>
+                <span style="display: flex;flex-direction: row;justify-content: center;align-items: center;">
+                    <a href="{% url 'FireDetectApp:homepage' %}" class="h4 text-white">Home</a>
+                    <h3 style="color: aliceblue;">/</h3>
+                    <a href="#" class="h4 text-white">Fire Log</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <div class="row">
+        <div style="width: 100%;">
+            <h3 class="text-black" style="margin-left: 10px;">Instances of Fire</h3>
+            <p style="color: rgb(212, 0, 0);margin-left: 10px;">All the instances of fire configured on your account</p><br>
+            <table class="table custom-table" style="color: black;">
+                <!-- ALternative Medicines List -->
+                <thead>
+                  <th>Instance No</th>
+                  <th>Instance Intensity</th>
+                  <th>Instance Time</th>
+                  <th>Instance Date</th>
+                  <th>Instance Address</th>
+                </thead>
+                <tbody>
+                  {% for instance in fire_instance %}
+                  <tr>
+                    <td>{{instance.instance_no}}</td>
+                    <td>{{instance.instance_intensity}}</td>
+                    <td>{{instance.instance_time}}</td>
+                    <td>{{instance.instance_date}}</td>
+                    <td>{{instance.instance_address}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+        </div>
+      </div>
+    {% endblock content %}

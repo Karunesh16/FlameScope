@@ -1,0 +1,10 @@
+{% extends 'FireDetectionApp/base.html' %}
+{% load static %}
+
+{% block content %}
+<section style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+    <h5 style="margin-top: 10px;">Live Feed from Webcam</h5>
+    <img style="width: 1000px;height: 590px;" src="{% url 'FireDetectApp:video_feed'  %}" alt="">
+    <a href="{% url 'FireDetectApp:homepage' %}" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight" style="margin-top: 10px;">Close Window</a>
+</section>
+{% endblock content %}
