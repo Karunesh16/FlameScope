@@ -8,9 +8,9 @@ def email_alert(subject, body, to):
     msg["subject"] = subject
     msg["to"] = to
     
-    user = "karuneshtest16@gmail.com"
+    user = "xxxxxxxxxxxxxx@gmail.com"
     msg["from"] = user
-    password = "qavubantzlxjqihb"
+    password = "xxxxxxxxxxxxxxxxxxxxx"
     
     with open('fire_image.jpeg', 'rb') as f:
         image_data = f.read()
@@ -18,7 +18,7 @@ def email_alert(subject, body, to):
         image_name = f.name
         msg.add_attachment(image_data, maintype='image', subtype=image_type, filename=image_name)
        
-    server = smtplib.SMTP("smtp.gmail.com",587)
+    server = smtplib.SMTP("smtp.gmail.com",port)
     server.starttls()
     server.login(user,password)
     
@@ -26,4 +26,4 @@ def email_alert(subject, body, to):
     server.quit()
     
 if __name__ == '__main__':
-    email_alert("Test1","Hello World","karunesh.b@somaiya.edu")
+    email_alert("Test1","Fire Detected","xxxxxxxxxxxxxxxxxxxxxxxxxx")
